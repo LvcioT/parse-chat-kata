@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  deno:
+    container_name: deno
+    image: denoland/deno
+#    restart: always
+    working_dir: /app
+    ports:
+      - ${NODE_FORWARD_PORT:-1993}:1993
+    volumes:
+      - ./app:/app
+      - ./deps:/deno-dir/deps
+    command: "tail -f /dev/null"
+#    depends_on:
+#      - mongo
+#  mongo:
+#    container_name: db-mongo
+#    image: mongo
+#    ports:
+#      - ${MONGO_FORWARD_PORT:-27017}:27017
+#    volumes:
+#      - ./data:/data/db

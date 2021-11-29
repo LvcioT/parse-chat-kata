@@ -1,2 +1,6 @@
 # IDE configuration
 .idea
+app/.vscode
+
+#project
+deps
