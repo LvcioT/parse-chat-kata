@@ -1,4 +1,5 @@
-import { parse } from './deps.ts';
+import { parser } from "./parser.ts";
 
-console.log('Hello World')
-console.log(parse(Deno.args))
+// simple wrapper for the corse parser
+// just the first argument is parsed
+console.log(parser(Deno.args[0] ?? ""));
