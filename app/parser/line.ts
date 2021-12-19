@@ -1,20 +1,10 @@
-export enum Types {
-  customer = "customer",
-  agent = "agent",
-}
+import {Types, Message} from './index.ts'
 
-export type Message = {
-  date: string;
-  mention: string;
-  sentence: string;
-  type: Types;
-};
-
-const rule = /^(?<date>\d{2}:\d{2}:\d{2}) (?<user>.*) : (?<sentence>.*)/;
+const rule = /^(?<date>\d{2}:\d{2}:\d{2}) (?<user>.*) : (?<sentence>.*\n?)$/;
 
 const getMention = (date: string, user: string): string => `${date} ${user} : `;
 
-export const parser = (input: string): Message[] => {
+export const parser = (input: string): Message | null => {
   const emptyMessage: Message = {
     date: "",
     mention: "",
@@ -25,13 +15,13 @@ export const parser = (input: string): Message[] => {
   const { date, user, sentence } = rule.exec(input)?.groups ?? emptyMessage;
 
   if (date && user && sentence) {
-    return [{
+    return {
       date: date,
       mention: getMention(date, user),
       sentence: sentence,
       type: Object.values(Types)[0],
-    }];
+    };
   } else {
-    return [];
+    return null;
   }
 };

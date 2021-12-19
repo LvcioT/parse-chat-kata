@@ -1,4 +1,4 @@
-import { parser } from "./parser.ts";
+import { parser } from "./parser/index.ts";
 
 // simple wrapper for the corse parser
 // just the first argument is parsed
