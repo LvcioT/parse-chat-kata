@@ -17,7 +17,7 @@ Deno.test("random string not matching", () => {
 });
 
 Deno.test("simple string", () => {
-  const useCase: Case = cases[CaseName.simple];
+  const useCase: Case = cases[CaseName.SingleSententence];
   const output: Message[] = parser(useCase.input);
 
   assertEquals(output, useCase.output);
