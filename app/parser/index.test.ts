@@ -34,3 +34,10 @@ Deno.test("usecase 3: two customer mentions as start", () => {
 
   assertEquals(output, useCase.output);
 });
+
+Deno.test("usecase 4: date splitting", () => {
+  const useCase: Case = cases[CaseName.DateSplitting];
+  const output: Message[] = parser(useCase.input);
+
+  assertEquals(output, useCase.output);
+});

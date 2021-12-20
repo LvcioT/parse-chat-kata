@@ -8,7 +8,7 @@ Deno.test("empty string", () => {
 });
 
 Deno.test("line split count", () => {
-  const output: string[] = parser("first\nsecond\n\nthird\nlast");
+  const output: string[] = parser("11:11:11first.\n22:22:22second.33:33:33third.\n\n44:44:44last.");
 
   assertEquals(output.length, 4);
 });

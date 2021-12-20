@@ -13,9 +13,10 @@ export enum CaseName {
   SingleSententence = 0,
   TwoSentences,
   TwoMentions,
+  DateSplitting,
 }
 
-export const cases: {[key in CaseName]: Case} = [
+export const cases: { [key in CaseName]: Case } = [
   // single sentence
   {
     input:
@@ -69,6 +70,22 @@ export const cases: {[key in CaseName]: Case} = [
       sentence:
         "Contrary to popular belief, Lorem Ipsum is not simply random text.",
       type: "customer",
+    }],
+  },
+  // dete splitting
+  {
+    input:
+      "14:24:32 Customer : Lorem ipsum dolor sit amet, consectetur adipiscing elit.14:26:15 Agent : Aliquam non cursus erat, ut blandit lectus.",
+    output: [{
+      date: "14:24:32",
+      mention: "14:24:32 Customer : ",
+      sentence: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      type: "customer",
+    }, {
+      date: "14:26:15",
+      mention: "14:26:15 Agent : ",
+      sentence: "Aliquam non cursus erat, ut blandit lectus.",
+      type: "agent",
     }],
   },
 ];
