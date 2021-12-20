@@ -1,4 +1,4 @@
-// assumption: every sentence begins with date, ends with dot and eventually has a tralini new line character
+// assumption: every sentence begins with date, ends with dot and eventually has a traling new line character
 const rule = /(\d{2}:\d{2}:\d{2}.+?\.\n?)/gm;
 
 export const parser = (input: string): string[] => {

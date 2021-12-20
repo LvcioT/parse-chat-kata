@@ -37,6 +37,8 @@ Parser section of this prog=ject is provided with a full set of test. The whole 
 
 Inside the file `cases.ts` are listed the use cases provided by the challenge. These data structures are used by test routines.
 
+Main tests related to this challenge are implemented inside `parser/index.test.ts` file.
+
 ## Published Code
 
 The whole code is published on [GitHub](https://github.com/LvcioT/parse-chat-kata): each challenge phase is marked by a tag (i.e. `step-3`).
