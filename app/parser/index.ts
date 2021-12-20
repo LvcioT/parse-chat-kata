@@ -1,10 +1,6 @@
 import { parser as sequenceParser } from "./sequence.ts";
 import { parser as lineParser } from "./line.ts";
-
-export enum Types {
-  customer = "customer",
-  agent = "agent",
-}
+import { Types } from "./type.ts";
 
 export type Message = {
   date: string;
@@ -28,9 +24,6 @@ export const parser = (input: string): Message[] => {
     const message: Message | null = lineParser(line);
 
     if (message) {
-      // set alternates type
-      message.type = Object.values(Types)[output.length % 2];
-
       output.push(message);
     }
   });

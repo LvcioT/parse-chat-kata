@@ -27,3 +27,10 @@ Deno.test("usecase 2: two sentences", () => {
 
   assertEquals(output, useCase.output);
 });
+
+Deno.test("usecase 3: two customer mentions as start", () => {
+  const useCase: Case = cases[CaseName.TwoMentions];
+  const output: Message[] = parser(useCase.input);
+
+  assertEquals(output, useCase.output);
+});

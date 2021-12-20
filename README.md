@@ -17,7 +17,7 @@ Run in the shell/terminal, navigate to this project folder and run the following
     docker-compose up
     docker exec -it deno bash
 
-You'll fine yourself inside the `/app` folder, root for the project inside the container.
+You'll be inside the `/app` folder, root for the project inside the container.
 
 ## Run App
 
@@ -27,7 +27,7 @@ In order to run the app, inside the container you have to run the command:
 
 At the first run some libraries could be downloaded, so be patient.
 
-The source code is in the `app` folder, whilst the core parser is enclosed in `parser` subfolder.
+The source code is in the `app` folder, whilst the core parser is enclosed in `parser` subfolder. File `main.ts` implements e very simple wrapper aimed to pass command line arguments to parser.
 
 ## Run Test
 
