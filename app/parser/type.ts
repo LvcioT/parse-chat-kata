@@ -3,12 +3,21 @@ export enum Types {
   AGENT = "agent",
 }
 
+let customerName: string | null = null;
+
+export const init = () => customerName = null;
+
 export const defaultType = (): Types => Object.values(Types)[0];
 
 export const getType = (user: string): Types => {
-  const keyType = user.toUpperCase() as keyof typeof Types;
-
-  const retrieved: Types = Types[keyType];
-
-  return retrieved ? retrieved : defaultType();
+  if (customerName) {
+    if (customerName == user) {
+      return Types.CUSTOMER;
+    } else {
+      return Types.AGENT;
+    }
+  } else {
+    customerName = user;
+    return Types.CUSTOMER;
+  }
 };

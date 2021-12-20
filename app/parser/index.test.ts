@@ -48,3 +48,10 @@ Deno.test("usecase 5: ignore extra dates", () => {
 
   assertEquals(output, useCase.output);
 });
+
+Deno.test("usecase 6: full name", () => {
+  const useCase: Case = cases[CaseName.FullName];
+  const output: Message[] = parser(useCase.input);
+
+  assertEquals(output, useCase.output);
+});

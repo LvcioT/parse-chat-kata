@@ -1,11 +1,14 @@
 import { Message } from "./index.ts";
-import { getType } from "./type.ts";
+import { Types } from "./type.ts";
 
 const rule = /^(?<date>\d{2}:\d{2}:\d{2}) (?<user>.*?) : (?<sentence>.*\n?)$/;
 
 const mention = (date: string, user: string): string => `${date} ${user} : `;
 
-export const parser = (input: string): Message | null => {
+export const parser = (
+  input: string,
+  getType: (user: string) => Types,
+): Message | null => {
   const groups = rule.exec(input)?.groups;
 
   const date = groups?.date ?? "";

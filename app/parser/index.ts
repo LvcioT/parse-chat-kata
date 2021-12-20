@@ -1,6 +1,6 @@
 import { parser as sequenceParser } from "./sequence.ts";
 import { parser as lineParser } from "./line.ts";
-import { Types } from "./type.ts";
+import { getType, init as initTypes, Types } from "./type.ts";
 
 export type Message = {
   date: string;
@@ -17,11 +17,13 @@ export type Message = {
  * @returns array of parsed messages
  */
 export const parser = (input: string): Message[] => {
+  initTypes();
+  
   const output: Message[] = [];
   const sequence: string[] = sequenceParser(input);
 
   sequence.forEach(function (line: string) {
-    const message: Message | null = lineParser(line);
+    const message: Message | null = lineParser(line, getType);
 
     if (message) {
       output.push(message);

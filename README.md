@@ -2,9 +2,9 @@
 
 This is a fork of a coding challenge. The master repository belongs to [Wonderflow](https://github.com/wonderflow-bv/parse-chat-kata).
 
-For details about the original challenge, see [ASSIGNMENT.md](./ASSIGNMENT.md)
+For details about the original challenge, see [ASSIGNMENT.md](./ASSIGNMENT.md).
 
-Challenge faced by Luciano Taurino ([LvcioT](mailto:luciano@taurino.eu?subject=parse-chat-kata)).
+Challenge faced by Luciano Taurino ([LvcioT](mailto:luciano@taurino.eu?subject=parse-chat-kata)). This projects aims solves steps from 1 to 6. Step 7, at this moment, it's not implemented.
 
 ## Environment Specifications and Setup
 
