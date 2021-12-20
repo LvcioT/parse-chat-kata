@@ -1,7 +1,7 @@
 import { Message } from "./index.ts";
 import { getType } from "./type.ts";
 
-const rule = /^(?<date>\d{2}:\d{2}:\d{2}) (?<user>.*) : (?<sentence>.*\n?)$/;
+const rule = /^(?<date>\d{2}:\d{2}:\d{2}) (?<user>.*?) : (?<sentence>.*\n?)$/;
 
 const mention = (date: string, user: string): string => `${date} ${user} : `;
 
